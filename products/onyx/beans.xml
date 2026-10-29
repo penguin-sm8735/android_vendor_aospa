@@ -6,6 +6,12 @@
 <manifest>
   <include name="../platforms/sun.xml" />
 
+  <!-- device/qcom/common with the tuna perf target -->
+  <remove-project name="Project-PenguinOS/device_qcom_common" />
+  <project path="device/qcom/common" name="penguin-sm8735/device_qcom_common" remote="aospa" revision="celerity">
+    <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
+  </project>
+
   <!-- Device Dependencies -->
   <project path="device/xiaomi/onyx" name="penguin-sm8735/android_device_xiaomi_onyx" remote="aospa" revision="celerity" />
   <project path="device/xiaomi/onyx-miuicamera" name="unmoved21/android_device_xiaomi_onyx-miuicamera" remote="aospa" revision="lineage-24.0" />
